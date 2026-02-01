@@ -24,7 +24,7 @@ func newPassw(w http.ResponseWriter, req *http.Request) {
 		senha := req.Form.Get("senha")
 		crud.InsertPassword(senha_local, senha)
 
-		http.Redirect(w, req, "/", 0)
+		http.Redirect(w, req, "/", http.StatusSeeOther)
 	}
 	tmpl := template.Must(template.ParseFiles(baseDir + "newPassword.html"))
 	tmpl.Execute(w, nil)

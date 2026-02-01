@@ -6,8 +6,22 @@
     <title>Document</title>
 </head>
 <body>
-    {{ range .AllColuns }}
-        {{ .Id }}
-    {{ end }}
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Local</th>
+            <th>Senha</th>
+        </tr>
+        {{ range .All }}
+            <tr>
+            
+                <td>{{ .Id }}</td>
+                <td>{{ .SenhaLocal }}</td>
+                <td>{{ .Senha }}</td>
+                
+            </tr>
+        {{ end }}
+    </table>
+    
 </body>
 </html>
